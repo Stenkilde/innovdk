@@ -1,0 +1,176 @@
+@import url("http://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  color: #4a6a8a;
+  background: #1a1a1a;
+  overflow-x: hidden;
+}
+
+.mobile-container {
+  width: 320px;
+  height: 640px;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+h1, h2 {
+  font-size: 45px;
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  transform: scale(1) translate3d(50px, 0, 0);
+  transform-origin: center right;
+  transition: transform .3s;
+  background-color: #222224;
+}
+.sidebar p {
+  color: #000;
+}
+
+.content {
+  min-height: 100%;
+  padding: 30px;
+  background: #eeeeee;
+  box-shadow: 0 0 5px black;
+  transform: translate3d(0, 0, 0);
+  transition: transform .3s;
+}
+
+.isOpen .content {
+  transform: translate3d(-200px, 0, 0);
+}
+
+.isOpen .sidebar {
+  transform: scale(1);
+}
+
+.button {
+  cursor: pointer;
+  float: right;
+  background-color: none;
+}
+
+.button:before {
+  content: "\f0c9";
+  font: 42px 'FontAwesome';
+}
+
+.sidenav {
+  width: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding-top: 20px;
+}
+
+.sidenav li {
+  list-style-type: none;
+}
+
+.sidenav a {
+  color: white;
+  text-decoration: none;
+}
+
+.sidenav {
+  & b {
+    font: bold 12px/48px Montserrat;
+    display: block;
+  }
+  &.animated-links b {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.4s;
+  }
+  &.fading-links b{
+    opacity: 0;
+    transition: all 0.4s;
+  }
+}
+
+.sidenav i {
+  display: block;
+  width: 50px;
+  float: left;
+  font-size: 16px;
+  line-height: 48px;
+  text-align: center;
+}
+
+
+/*Animate links from right to left + fade in effect*/
+.isOpen .sidenav.animated-links b {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/*Adding delay to link animation - in multiples of .08s*/
+/*One can use jQuery also for creating the delayed effect. But I will stick to manual CSS for this walkthrough.*/
+.isOpen .sidenav.animated-links li:nth-child(1) b {
+  transition-delay: 0.05s;
+}
+.isOpen .sidenav.animated-links li:nth-child(2) b {
+  transition-delay: 0.10s;
+}
+.isOpen .sidenav.animated-links li:nth-child(3) b {
+  transition-delay: 0.15s;
+}
+.isOpen .sidenav.animated-links li:nth-child(4) b {
+  transition-delay: 0.20s;
+}
+.isOpen .sidenav.animated-links li:nth-child(5) b {
+  transition-delay: 0.25s;
+}
+.isOpen .sidenav.animated-links li:nth-child(6) b {
+  transition-delay: 0.30s;
+}
+
+
+/*fade in effect*/
+.isOpen .sidenav.fading-links b {
+  opacity: 1;
+}
+
+/*Adding delay to link animation - in multiples of .08s*/
+/*One can use jQuery also for creating the delayed effect. But I will stick to manual CSS for this walkthrough.*/
+.isOpen .sidenav.fading-links li:nth-child(1) b {
+  transition-delay: 0.08s;
+}
+.isOpen .sidenav.fading-links li:nth-child(2) b {
+  transition-delay: 0.16s;
+}
+.isOpen .sidenav.fading-links li:nth-child(3) b {
+  transition-delay: 0.24s;
+}
+.isOpen .sidenav.fading-links li:nth-child(4) b {
+  transition-delay: 0.32s;
+}
+.isOpen .sidenav.fading-links li:nth-child(5) b {
+  transition-delay: 0.40s;
+}
+.isOpen .sidenav.fading-links li:nth-child(6) b {
+  transition-delay: 0.48s;
+}
+
+
